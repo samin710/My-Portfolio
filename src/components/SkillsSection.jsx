@@ -62,7 +62,6 @@ const skills = [
   { name: "JavaScript", level: 85, category: "language" },
   { name: "C++", level: 95, category: "language" },
   { name: "C", level: 92, category: "language" },
-  
 ];
 
 const categories = [
@@ -76,10 +75,17 @@ const categories = [
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [showAllSkills, setShowAllSkills] = useState(false);
 
-  const filteredSkills = skills.filter(
-    (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
+  const filteredSkills =
+    activeCategory === "all"
+      ? showAllSkills
+        ? skills
+        : skills
+            .slice()
+            .sort((a, b) => b.level - a.level)
+            .slice(0, 6)
+      : skills.filter((skill) => skill.category === activeCategory);
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -87,16 +93,19 @@ export const SkillsSection = () => {
           My <span className="text-primary"> Skills</span>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-col md:flex-row justify-center gap-4 mb-12">
           {categories.map((category, key) => (
             <button
               key={key}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => {
+                setActiveCategory(category);
+                setShowAllSkills(false);
+              }}
               className={cn(
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-foreground hover:bd-secondary"
+                  : "bg-secondary/70 text-foreground hover:bd-secondary border"
               )}
             >
               {category}
@@ -128,6 +137,17 @@ export const SkillsSection = () => {
             </div>
           ))}
         </div>
+
+        {activeCategory === "all" && (
+          <div className="text-center mt-12">
+            <button
+              className="cosmic-button w-fit flex items-center mx-auto gap-2"
+              onClick={() => setShowAllSkills((prev) => !prev)}
+            >
+              {showAllSkills ? "Show Less" : "Show All Skills"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
