@@ -2,29 +2,77 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
+  // Machine Learning
+
+  {
+    name: "Neural Networks & Deep Learning",
+    level: 90,
+    category: "machine learning",
+  },
+  { name: "Data Preprocessing", level: 95, category: "machine learning" },
+  {
+    name: "Regression & Classification",
+    level: 95,
+    category: "machine learning",
+  },
+  {
+    name: "Model Evaluation & Optimization",
+    level: 92,
+    category: "machine learning",
+  },
+  {
+    name: "Supervised & Unsupervised Learning",
+    level: 98,
+    category: "machine learning",
+  },
+  {
+    name: "Feature Engineering",
+    level: 88,
+    category: "machine learning",
+  },
+
   // Frontend
-  { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  { name: "HTML/CSS", level: 90, category: "frontend" },
+  { name: "React", level: 80, category: "frontend" },
+  { name: "Tailwind CSS", level: 92, category: "frontend" },
+  { name: "Axios", level: 70, category: "frontend" },
 
   // Backend
   { name: "Node.js", level: 80, category: "backend" },
   { name: "Express", level: 75, category: "backend" },
   { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
 
   // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  { name: "TensorFlow", level: 92, category: "tools" },
+  { name: "Scikit-learn", level: 90, category: "tools" },
+  { name: "PyTorch", level: 88, category: "tools" },
+  { name: "Pandas & NumPy", level: 93, category: "tools" },
+  { name: "Matplotlib & Seaborn", level: 95, category: "tools" },
+  { name: "Keras", level: 80, category: "tools" },
+  { name: "Git/GitHub", level: 75, category: "tools" },
+  { name: "VS Code", level: 88, category: "tools" },
+  { name: "Firebase Authentication", level: 75, category: "tools" },
+
+  // Language
+  {
+    name: "Python",
+    level: 92,
+    category: "language",
+  },
+  { name: "JavaScript", level: 85, category: "language" },
+  { name: "C++", level: 95, category: "language" },
+  { name: "C", level: 92, category: "language" },
+  
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = [
+  "all",
+  "machine learning",
+  "frontend",
+  "backend",
+  "tools",
+  "language",
+];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -48,7 +96,7 @@ export const SkillsSection = () => {
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "bg-secondary/70 text-forefround hover:bd-secondary"
+                  : "bg-secondary/70 text-foreground hover:bd-secondary"
               )}
             >
               {category}
@@ -56,7 +104,7 @@ export const SkillsSection = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
