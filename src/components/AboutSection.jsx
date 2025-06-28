@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import { Brain, Code } from "lucide-react";
 
 export const AboutSection = () => {
   return (
@@ -12,20 +12,24 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate Web Developer & Tech Creator
+              Machine Learning Engineer with a Full-Stack Edge
             </h3>
 
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              Driven by a love for intelligent systems fuels my work in
+              developing models that learn, adapt, and automate. I specialize in
+              transforming data into insights and integrating predictive
+              capabilities into applications—bridging the gap between web
+              development and AI to build smarter digital experiences.
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+              On the web development side, my curiosity for clean code and
+              impactful design, I craft full-stack web applications using the
+              MERN stack. I focus on building intuitive user interfaces,
+              efficient APIs, and scalable architectures that bring ideas to
+              life in the browser. From concept to deployment, I enjoy turning
+              product requirements into real-world, interactive solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -35,7 +39,8 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href=""
+                href="/Resume.pdf"
+                download
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
@@ -47,6 +52,20 @@ export const AboutSection = () => {
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
+                  <Brain className="h-6 w-6 text-primary" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-lg">Machine Learning</h4>
+                  <p className="text-muted-foreground">
+                    Building intelligent models and data-driven solutions to
+                    solve real-world problems.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="gradient-border p-6 card-hover">
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-full bg-primary/10">
                   <Code className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
@@ -54,35 +73,6 @@ export const AboutSection = () => {
                   <p className="text-muted-foreground">
                     Creating responsive websites and web applications with
                     modern frameworks.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
-                  <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary" />
-                </div>
-
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
-                  <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
                   </p>
                 </div>
               </div>
