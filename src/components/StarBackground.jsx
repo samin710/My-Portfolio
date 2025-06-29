@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 export const StarBackground = () => {
   const [stars, setStars] = useState([]);
   const [meteors, setMeteors] = useState([]);
+  const [isDark, setIsDark] = useState(false); // 🟢 1. Add theme state
 
   useEffect(() => {
     generateStars();
@@ -15,9 +16,25 @@ export const StarBackground = () => {
       generateStars();
     };
 
+    // 🟢 2. Detect current theme
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkTheme();
+
     window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    // Optional: track theme toggle dynamically if needed
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      observer.disconnect(); // 🧹 Clean up observer
+    };
   }, []);
 
   const generateStars = () => {
@@ -64,7 +81,7 @@ export const StarBackground = () => {
       {stars.map((star) => (
         <div
           key={star.id}
-          className="star animate-pulse-subtle"
+          className={`star animate-pulse-subtle ${!isDark ? "bg-black" : ""}`} // 🟢 3. Conditionally add bg-black in light mode
           style={{
             width: star.size + "px",
             height: star.size + "px",
@@ -72,6 +89,9 @@ export const StarBackground = () => {
             top: star.y + "%",
             opacity: star.opacity,
             animationDuration: star.animationDuration + "s",
+            ...(!isDark && {
+              boxShadow: "0 0 10px 2px rgba(0, 0, 0, 0.4)",
+            }), // 🟢 Apply glow only in light theme
           }}
         />
       ))}
@@ -79,7 +99,7 @@ export const StarBackground = () => {
       {meteors.map((meteor) => (
         <div
           key={meteor.id}
-          className="meteor animate-meteor"
+          className={`meteor animate-meteor ${!isDark ? "bg-black" : ""}`} // 🟢 4. Conditionally add bg-black in light mode
           style={{
             width: meteor.size * 50 + "px",
             height: meteor.size * 2 + "px",
@@ -87,6 +107,9 @@ export const StarBackground = () => {
             top: meteor.y + "%",
             animationDelay: meteor.delay,
             animationDuration: meteor.animationDuration + "s",
+            ...(!isDark && {
+              boxShadow: "0 0 10px 2px rgba(0, 0, 0, 0.4)",
+            }), // 🟢 Apply glow only in light theme
           }}
         />
       ))}
