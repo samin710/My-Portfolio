@@ -16,7 +16,7 @@ export const HeroSection = () => {
               alt=""
             />
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight ">
             <span className="opacity-0 animate-fade-in"> Hi, I am</span>
             <span className="text-gradient opacity-0 animate-fade-in-delay-1">
               {" "}
@@ -28,7 +28,7 @@ export const HeroSection = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3 backdrop-blur-lg">
             MERN Stack Developer & Machine Learning Engineer focused on building
             scalable web apps and smart solutions.
           </p>

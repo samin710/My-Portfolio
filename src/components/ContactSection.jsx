@@ -58,12 +58,12 @@ export const ContactSection = () => {
               Contact Information
             </h3>
 
-            <div className="space-y-6 justify-center">
+            <div className="space-y-6 justify-center ">
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
+                <div className="backdrop-blur-lg">
                   <h4 className="font-medium"> Email</h4>
                   <a
                     href="mailto:smsamin710@gmail.com"
@@ -77,7 +77,7 @@ export const ContactSection = () => {
                 <div className="p-3 rounded-full bg-primary/10">
                   <Phone className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
+                <div className="backdrop-blur-lg">
                   <h4 className="font-medium">Phone / WhatsApp</h4>
                   <a
                     href="tel:+8801786945559"
@@ -91,7 +91,7 @@ export const ContactSection = () => {
                 <div className="p-3 rounded-full bg-primary/10">
                   <MapPin className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
+                <div className="backdrop-blur-lg">
                   <h4 className="font-medium"> Location</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
                     Thakurgoan, Bangladesh

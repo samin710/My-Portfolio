@@ -15,7 +15,7 @@ export const AboutSection = () => {
               Machine Learning Engineer with a Full-Stack Edge
             </h3>
 
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground backdrop-blur-lg">
               Driven by a love for intelligent systems fuels my work in
               developing models that learn, adapt, and automate. I specialize in
               transforming data into insights and integrating predictive
@@ -23,7 +23,7 @@ export const AboutSection = () => {
               development and AI to build smarter digital experiences.
             </p>
 
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground backdrop-blur-lg">
               On the web development side, my curiosity for clean code and
               impactful design, I craft full-stack web applications using the
               MERN stack. I focus on building intuitive user interfaces,
