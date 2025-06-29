@@ -10,7 +10,6 @@ export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const form = useRef();
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -107,10 +106,13 @@ export const ContactSection = () => {
                 <a href="https://www.linkedin.com/in/smsamin/" target="_blank">
                   <FaLinkedinIn size={22} />
                 </a>
-                <a href="#" target="_blank">
+                <a href="https://x.com/sm_samin710?s=21" target="_blank">
                   <FaXTwitter size={22} />
                 </a>
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.facebook.com/share/16cjTU3GUU/?mibextid=wwXIfr"
+                  target="_blank"
+                >
                   <FaFacebookF size={22} />
                 </a>
               </div>
