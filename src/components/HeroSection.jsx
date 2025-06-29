@@ -9,13 +9,13 @@ export const HeroSection = () => {
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
-          {/* <div className="flex justify-center items-center">
+          <div className="flex justify-center items-center">
             <img
               src={img}
               className="rounded-full w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 object-top object-cover"
               alt=""
             />
-          </div> */}
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in"> Hi, I am</span>
             <span className="text-gradient opacity-0 animate-fade-in-delay-1">
