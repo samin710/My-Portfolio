@@ -54,11 +54,7 @@ const skills = [
   { name: "Firebase Authentication", level: 75, category: "tools" },
 
   // Language
-  {
-    name: "Python",
-    level: 92,
-    category: "language",
-  },
+  { name: "Python", level: 92, category: "language" },
   { name: "JavaScript", level: 85, category: "language" },
   { name: "C++", level: 95, category: "language" },
   { name: "C", level: 92, category: "language" },

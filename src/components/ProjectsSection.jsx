@@ -1,34 +1,56 @@
-import { ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
+import jobTracker from "../assets/projectsImages/jobtracker.png";
+import recipeBook from "../assets/projectsImages/rcipebook.png";
+import tradePort from "../assets/projectsImages/tradeport.png";
+import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    title: "TradePort",
+    description:
+      "TradePort is a dynamic e-commerce web application where users can browse, buy, and manage products across various categories.",
+    image: tradePort,
+    tags: [
+      "React",
+      "TailwindCSS",
+      "Vite",
+      "Express",
+      "MongoDB",
+      "Firebase Auth",
+      "JWT",
+      "JavaScript",
+    ],
+    demoUrl: "https://b2b-wholesale-platform-57595.web.app/",
+    githubUrl: "https://github.com/samin710/Trade-Port-Client",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Recipe Book App",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "The Recipe Book App is a dynamic web application that allows users to share and explore recipes with a range of interactive features.",
+    image: recipeBook,
+    tags: [
+      "React",
+      "TailwindCSS",
+      "Vite",
+      "Express",
+      "MongoDB",
+      "Firebase Auth",
+      "JavaScript",
+    ],
+    demoUrl: "https://recipe-book-app-379ac.web.app/",
+    githubUrl: "https://github.com/samin710/Recipe-Book-Client",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Job Tracker",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+      "Job Tracker is a job listing platform where applicants can browse jobs from multiple companies, view detailed job descriptions, and apply directly through the platform.",
+    image: jobTracker,
+    tags: ["React", "TailwindCSS", "Vite", "Firebase Auth", "JavaScript"],
+    demoUrl: "https://job-tracker-41ddb.web.app/",
+    githubUrl: "https://github.com/samin710/Job-Tracker",
   },
 ];
 
@@ -52,7 +74,7 @@ export const ProjectsSection = () => {
               key={key}
               className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
             >
-              <div className="h-48 overflow-hidden">
+              <div className="md:h-60 h-56 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -65,7 +87,7 @@ export const ProjectsSection = () => {
                   {project.tags.map((tag, key) => (
                     <span
                       key={key}
-                      className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground"
+                      className="px-2 py-1 text-xs font-medium border rounded-full bg-primary/20 text-secondary-foreground"
                     >
                       {tag}
                     </span>
@@ -90,7 +112,7 @@ export const ProjectsSection = () => {
                       target="_blank"
                       className="text-foreground/80 hover:text-primary transition-colors duration-300"
                     >
-                      <Github size={20} />
+                      <FaGithub size={20} />
                     </a>
                   </div>
                 </div>
@@ -103,9 +125,9 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/samin710"
           >
-            Check My Github <ArrowRight size={16} />
+            Check My Github <FaGithub size={16}></FaGithub><ArrowRight size={16} />
           </a>
         </div>
       </div>
