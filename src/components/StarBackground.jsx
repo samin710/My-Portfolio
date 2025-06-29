@@ -99,7 +99,11 @@ export const StarBackground = () => {
       {meteors.map((meteor) => (
         <div
           key={meteor.id}
-          className={`meteor animate-meteor ${!isDark ? "bg-black" : ""}`} // 🟢 4. Conditionally add bg-black in light mode
+          className={`meteor animate-meteor ${
+            !isDark
+              ? "bg-black bg-linear-to-r from-black via-black to-white"
+              : ""
+          }`} // 🟢 4. Conditionally add bg-black in light mode
           style={{
             width: meteor.size * 50 + "px",
             height: meteor.size * 2 + "px",
