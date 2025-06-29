@@ -1,17 +1,36 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useRef();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     setIsSubmitting(true);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_service_id,
+        import.meta.env.VITE_template_id,
+        form.current,
+        import.meta.env.VITE_public_key
+      )
+      .then(
+        (result) => {
+          console.log("SUCCESS!", result.text);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
 
     setTimeout(() => {
       toast({
@@ -48,10 +67,10 @@ export const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Email</h4>
                   <a
-                    href="mailto:smsaminii112@gmail.com"
+                    href="mailto:smsamin710@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    smsaminii112@gmail.com
+                    smsamin710@gmail.com
                   </a>
                 </div>
               </div>
@@ -104,7 +123,7 @@ export const ContactSection = () => {
           >
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
-            <form className="space-y-6">
+            <form ref={form} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
