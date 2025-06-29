@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import logo from "../assets/logo.png";
+import logo_dark from "../assets/logo_dark.png";
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -13,14 +15,30 @@ const navItems = [
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
+    const checkTheme = () => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    };
+    checkTheme();
+
+    // Optional: track theme toggle dynamically if needed
+    const observer = new MutationObserver(checkTheme);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect(); // 🧹 Clean up observer
+    };
   }, []);
   return (
     <nav
@@ -34,9 +52,15 @@ export const Navbar = () => {
           className="text-xl font-bold text-primary flex items-center"
           href="#hero"
         >
+          <div className="w-10 h-9 transition-all duration-300">
+            <img
+              src={isDark ? logo_dark : logo}
+              className="w-full object-cover"
+              alt=""
+            />
+          </div>
           <span className="relative z-10">
-            <span className="text-glow text-foreground"> PedroTech </span>{" "}
-            Portfolio
+            <span className="text-glow text-foreground"> S M </span> SAMIN
           </span>
         </a>
 
