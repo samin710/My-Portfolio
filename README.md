@@ -80,5 +80,4 @@ npm run dev
 * [Vite](https://vitejs.dev/)
 * [Vercel](https://vercel.com/)
 
----
 
