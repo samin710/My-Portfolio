@@ -1,4 +1,4 @@
-# My Portfolio
+# S M SAMIN
 
 ## 🔗 Live Website  
 👉 [S M Samin](https://smsamin-portfolio.vercel.app/)
