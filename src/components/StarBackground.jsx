@@ -12,9 +12,9 @@ export const StarBackground = () => {
     generateStars();
     generateMeteors();
 
-    const handleResize = () => {
-      generateStars();
-    };
+    // const handleResize = () => {
+    //   generateStars();
+    // };
 
     // 🟢 2. Detect current theme
     const checkTheme = () => {
@@ -22,7 +22,7 @@ export const StarBackground = () => {
     };
     checkTheme();
 
-    window.addEventListener("resize", handleResize);
+    // window.addEventListener("resize", handleResize);
 
     // Optional: track theme toggle dynamically if needed
     const observer = new MutationObserver(checkTheme);
@@ -32,7 +32,7 @@ export const StarBackground = () => {
     });
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      // window.removeEventListener("resize", handleResize);
       observer.disconnect(); // 🧹 Clean up observer
     };
   }, []);
