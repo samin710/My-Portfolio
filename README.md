@@ -64,8 +64,8 @@
 ### Clone and Run
 
 ```bash
-git clone https://github.com/yourusername/react-tailwind-portfolio.git
-cd react-tailwind-portfolio
+git clone https://github.com/samin710/My-Portfolio.git
+cd My-Portfolio
 npm install
 npm run dev
 ```
