@@ -1,7 +1,7 @@
 # My Portfolio
 
 ## 🔗 Live Website  
-👉 [Recipe Book App Live](https://smsamin-portfolio.vercel.app/)
+👉 [S M Samin](https://smsamin-portfolio.vercel.app/)
 
 ---
 
